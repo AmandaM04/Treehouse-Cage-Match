@@ -32,8 +32,8 @@ const buildDomString = (players) => {
     let domString ='';
     players.forEach((player) => {
     domString += `<div class="col-md-6">`;
-    domString += `<img src="${player.gravatar_url}" class="player2-image"><br>`;
-    domString += `<span class="score" id="player2-score">${player.points.total}</span>`;
+    domString += `<img src="${player.gravatar_url}" class="playerImage"><br>`;
+    domString += `<span class="score" id="playerScore">${player.points.total}</span>`;
     domString += `</div>`;
 });
 
@@ -60,14 +60,13 @@ const cageMatch = (winnerArray) => {
 const WinnerResults = (winner) => {
   let showWinner = "";
   showWinner += `<h2><u>${winner.name}</u></h2>`;
+  showWinner += `<div class="won">`;
   for (let i = 0; i < winner.badges.length; i++) {
-    showWinner += `<div class="won">
-                              <img class="badges" src="${winner.badges[i].icon_url}" width="50px" height="50px">
-                          </div>`;
-
-  }
+    showWinner += `<span style="margin:3px;"><img class="badges" src="${winner.badges[i].icon_url}" width="50px" height="50px"></span>`;
+  };
+  showWinner += `</div>`;
   printToDom(showWinner, 'winner');
-}
+};
 
 
 function executeThisCodeIfXHRFails(){

@@ -1,3 +1,16 @@
 body {
     background-color: aliceblue;
 }
+
+.playerImage {
+  width: 150px;
+  height: 150px;
+}
+
+.score {
+  font-size: 24px;
+}
+
+.won {
+  display: block;
+}
